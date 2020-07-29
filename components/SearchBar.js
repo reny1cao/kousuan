@@ -21,7 +21,7 @@ const SearchBar = () => {
 const styles = StyleSheet.create({
   searchBar: {
     width: "100%",
-    marginVertical: 10,
+    marginTop: 10,
   },
 });
 
