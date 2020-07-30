@@ -9,17 +9,6 @@ import Colors from "../constants/colors";
 
 import categories from "../constants/mocks";
 
-const creatList = () => {
-    categories.map((category) => {
-        return (
-          <View key={category.id}>
-            <Text>{category.name}</Text>
-            <QuestionTypeList data={category.subCategories}/>
-          </View>
-        );
-      })
-}
-
 const QuestionType = () => {
   //props should contain the info about what grade is choosed
   return (
@@ -29,16 +18,7 @@ const QuestionType = () => {
       </View>
       <SearchBar />
       <View>
-        {categories.map((category) => {
-          return (
-            <View key={category.id}>
-                <View style={styles.category}>
-                    <Text appearance='hint'>{category.name}</Text>
-                </View>
-              <QuestionTypeList data={category.subCategories}/>
-            </View>
-          );
-        })}
+        <QuestionTypeList data={categories} />
       </View>
     </View>
   );
