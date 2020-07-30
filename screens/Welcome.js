@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         width: '80%',
         justifyContent: 'space-evenly',
-        marginVertical: 40
+        flex: 1
     }
 });
 

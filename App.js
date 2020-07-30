@@ -9,6 +9,7 @@ import QuestionType from "./screens/QuestionType";
 import * as eva from "@eva-design/eva";
 import { ApplicationProvider, IconRegistry } from "@ui-kitten/components";
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
+import Question from "./screens/Question";
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -35,7 +36,8 @@ export default function App() {
       <ApplicationProvider {...eva} theme={eva.light}>
         <View style={styles.container}>
           {/* <Welcome /> */}
-          <QuestionType />
+          {/* <QuestionType /> */}
+          <Question />
           <StatusBar style="auto" />
         </View>
       </ApplicationProvider>
