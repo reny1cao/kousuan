@@ -36,8 +36,8 @@ export default function App() {
       <ApplicationProvider {...eva} theme={eva.light}>
         <View style={styles.container}>
           {/* <Welcome /> */}
-          {/* <QuestionType /> */}
-          <Question />
+          <QuestionType />
+          {/* <Question /> */}
           <StatusBar style="auto" />
         </View>
       </ApplicationProvider>
@@ -47,8 +47,9 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
+    // flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    marginTop: 50
+    marginTop: 50,
   },
 });

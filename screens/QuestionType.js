@@ -17,7 +17,7 @@ const QuestionType = () => {
         <HeaderText>一年级下册</HeaderText>
       </View>
       <SearchBar />
-      <View>
+      <View style={styles.container}>
         <QuestionTypeList data={categories} />
       </View>
     </View>
@@ -25,6 +25,9 @@ const QuestionType = () => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
   headerSection: {
     alignItems: "center",
   },

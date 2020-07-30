@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, FlatList, View, Button, TouchableOpacity } from "react-native";
+import { StyleSheet, View, TouchableOpacity, ScrollView } from "react-native";
 import { Divider, Text } from "@ui-kitten/components";
 
 const QuestionTypeList = (props) => {
@@ -12,8 +12,8 @@ const QuestionTypeList = (props) => {
     </View>
   );
 
-  const renderItem = ({ item }) => (
-    <View>
+  const renderItem = (item) => (
+    <View key={item.id}>
       <View style={styles.categoryTextContainer}>
         <Text style={styles.categoryText} appearance="hint">{item.name}</Text>
       </View>
@@ -23,19 +23,14 @@ const QuestionTypeList = (props) => {
 
   return (
     <View style={styles.container}>
-      <FlatList
-        data={props.data}
-        renderItem={renderItem}
-        keyExtractor={(item) => `${item.id}`}
-      />
+      <ScrollView style={styles.list}>
+        {props.data.map(item => renderItem(item))}
+      </ScrollView>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
   categoryTextContainer: {
     backgroundColor: 'rgb(238, 241, 246)'
   },
