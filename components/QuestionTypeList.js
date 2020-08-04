@@ -5,7 +5,7 @@ import { Divider, Text } from "@ui-kitten/components";
 const QuestionTypeList = (props) => {
 
   const handlePress = () => {
-    props.navigation.navigate("Question");
+    props.navigation.navigate("QuestionStart");
   }
 
   const renderSubItem = (item) => (

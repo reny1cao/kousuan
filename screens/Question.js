@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { StyleSheet, SafeAreaView, TouchableOpacity } from "react-native";
+import React, { useState, useEffect } from "react";
+import { StyleSheet, TouchableOpacity } from "react-native";
 import HeaderText from "../components/HeaderText";
-import { Layout, Text } from "@ui-kitten/components";
+import { Layout, Text, Button } from "@ui-kitten/components";
 
 import { generateSimpleArithmetic } from "../math-problem/SimpleArithmetic";
 
@@ -9,14 +9,18 @@ import Colors from "../constants/colors";
 
 const Question = () => {
   //props should contain the info about what grade is choosed
-  const [answer, setAnswer] = useState(0);
+  const [answer, setAnswer] = useState(null);
   let generator = new generateSimpleArithmetic();
 
   generator.getNums(20);
   generator.getOperation();
   generator.getAnsArray();
 
-  console.log(generator.answers);
+  const handleSelectAns = (index) => {
+    if (generator.answers[index] == generator.trueAns) {
+      setAnswer(true);
+    }
+  }
 
   return (
     <Layout style={styles.container}>
@@ -35,12 +39,16 @@ const Question = () => {
       <Layout style={styles.answerContainer}>
         {generator.answers.map((ans, index) => {
           return (
-            <TouchableOpacity style={styles.answeTextContainer} key={index}>
-              <Text style={styles.answerText}>{ans}</Text>
-            </TouchableOpacity>
+             <Button appearance='outline' status={answer && generator.trueAns == ans ? 'success' : 'basic'} key={index} onPress={() => handleSelectAns(index)}>
+                <Text style={styles.answerText}>{ans}</Text>
+            </Button>
           );
         })}
       </Layout>
+      <Layout style={styles.nextQuestionButton}>
+        {answer ? <Button>下一题</Button> : null}
+      </Layout>
+      
     </Layout>
   );
 };
@@ -81,8 +89,9 @@ const styles = StyleSheet.create({
     fontFamily: 'XiaoWei',
     padding: 10
   },
-  answeTextContainer:{
-    backgroundColor: 'rgb(238, 241, 246)'
+  nextQuestionButton: {
+    flex: 1,
+    alignItems: 'center'
   }
 });
 export default Question;
