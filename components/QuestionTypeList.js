@@ -3,10 +3,15 @@ import { StyleSheet, View, TouchableOpacity, ScrollView } from "react-native";
 import { Divider, Text } from "@ui-kitten/components";
 
 const QuestionTypeList = (props) => {
+
+  const handlePress = () => {
+    props.navigation.navigate("Question");
+  }
+
   const renderSubItem = (item) => (
     <View key={item.id}>
       <Divider />
-      <TouchableOpacity style={styles.subItemContainer}>
+      <TouchableOpacity style={styles.subItemContainer} onPress={handlePress}>
         <Text style={styles.subItem}>{item.name}</Text>
       </TouchableOpacity>
     </View>

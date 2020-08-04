@@ -1,53 +1,56 @@
 import React, { useState } from "react";
-import { StyleSheet, View, TouchableOpacity} from "react-native";
+import { StyleSheet, SafeAreaView, TouchableOpacity} from "react-native";
 import HeaderText from "../components/HeaderText";
-import { Text } from "@ui-kitten/components";
+import { Layout, Text } from "@ui-kitten/components";
 
 import Colors from "../constants/colors";
 
 const Question = () => {
   //props should contain the info about what grade is choosed
   return (
-    <View>
-      <View style={styles.headerSection}>
+      <Layout style={styles.container}>
+      <Layout style={styles.headerSection}>
         <HeaderText>20以内加减法</HeaderText>
-      </View>
-      <View style={styles.questionContainer}>
-        <View style={styles.questionTextContainer}>
+      </Layout>
+      <Layout style={styles.questionContainer}>
+        <Layout style={styles.questionTextContainer}>
           <Text style={styles.emptyQuestionText}>?</Text>
-        </View>
+        </Layout>
         <Text style={styles.questionText}>+10=15</Text>
-      </View>
-      <View style={styles.answerContainer}>
+      </Layout>
+      <Layout style={styles.answerContainer}>
         <TouchableOpacity style={styles.answeTextContainer}>
-          <View>
+          <Layout>
             <Text style={styles.answerText}>4</Text>
-          </View>
+          </Layout>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.answeTextContainer}>
-          <View>
+          <Layout>
             <Text style={styles.answerText}>5</Text>
-          </View>
+          </Layout>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.answeTextContainer}>
-          <View>
+          <Layout>
             <Text style={styles.answerText}>7</Text>
-          </View>
+          </Layout>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.answeTextContainer}>
-          <View>
+          <Layout>
             <Text style={styles.answerText}>7</Text>
-          </View>
+          </Layout>
         </TouchableOpacity>
-      </View>
-    </View>
+      </Layout>
+    </Layout>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
   headerSection: {
     alignItems: "center",
   },

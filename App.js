@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
-import Welcome from "./screens/Welcome";
-import QuestionType from "./screens/QuestionType";
 
 import * as eva from "@eva-design/eva";
-import { ApplicationProvider, IconRegistry } from "@ui-kitten/components";
+import { ApplicationProvider, IconRegistry, Layout } from "@ui-kitten/components";
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
-import Question from "./screens/Question";
+
+import { AppNavigator } from './navigation/MainNavigator'
+
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -17,8 +17,9 @@ const fetchFonts = () => {
   });
 };
 
+
 export default function App() {
-  const [dataLoaded, setDataLoaded] = useState(false);
+  const [dataLoaded, setDataLoaded ] = useState(false);
 
   if (!dataLoaded) {
     return (
@@ -34,12 +35,9 @@ export default function App() {
     <>
       <IconRegistry icons={EvaIconsPack} />
       <ApplicationProvider {...eva} theme={eva.light}>
-        <View style={styles.container}>
-          {/* <Welcome /> */}
-          <QuestionType />
-          {/* <Question /> */}
-          <StatusBar style="auto" />
-        </View>
+        <Layout style={styles.container}>  
+          <AppNavigator />
+        </Layout>
       </ApplicationProvider>
     </>
   );
@@ -47,9 +45,6 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    marginTop: 50,
+    flex: 1,
   },
 });
