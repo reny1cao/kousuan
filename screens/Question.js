@@ -7,8 +7,9 @@ import Colors from "../constants/colors";
 
 const Question = () => {
   //props should contain the info about what grade is choosed
+
   return (
-      <Layout style={styles.container}>
+    <Layout style={styles.container}>
       <Layout style={styles.headerSection}>
         <HeaderText>20以内加减法</HeaderText>
       </Layout>
@@ -20,27 +21,19 @@ const Question = () => {
       </Layout>
       <Layout style={styles.answerContainer}>
         <TouchableOpacity style={styles.answeTextContainer}>
-          <Layout>
-            <Text style={styles.answerText}>4</Text>
-          </Layout>
+          <Text style={styles.answerText}>4</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.answeTextContainer}>
-          <Layout>
-            <Text style={styles.answerText}>5</Text>
-          </Layout>
+          <Text style={styles.answerText}>5</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.answeTextContainer}>
-          <Layout>
-            <Text style={styles.answerText}>7</Text>
-          </Layout>
+          <Text style={styles.answerText}>7</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.answeTextContainer}>
-          <Layout>
-            <Text style={styles.answerText}>7</Text>
-          </Layout>
+          <Text style={styles.answerText}>7</Text>
         </TouchableOpacity>
       </Layout>
     </Layout>

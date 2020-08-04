@@ -38,7 +38,6 @@ const styles = StyleSheet.create({
     },
     gradeSection: {
         flexDirection: 'row',
-        width: '80%',
         justifyContent: 'space-evenly',
         flex: 1,
     }
