@@ -1,32 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, Button, View } from "react-native";
 import { NianJiButton } from "../components/NianJiButton";
 import TitleText from "../components/TitleText";
 import { Layout } from '@ui-kitten/components';
 
 const Welcome = ({navigation}) => {
+  const [grade, setGrade] = useState('');
 
   const handlePress = () => {
-    navigation.navigate('QuestionType');
+    navigation.navigate('QuestionType', {gradeSelected: grade});
   }
+
+  const handleGradeSelect = (selected) => {
+    // console.log(selected)
+    setGrade(currentGrade => currentGrade + selected);
+    console.log(grade)
+  };
 
   return (
       <Layout style={styles.container}>
       <TitleText>口算</TitleText>
       <Layout style={styles.gradeSection}>
-        <NianJiButton onPress={handlePress}>一年级</NianJiButton>
-        <NianJiButton>二年级</NianJiButton>
+        <NianJiButton onPress={handleGradeSelect}>一年级</NianJiButton>
+        <NianJiButton onPress={handleGradeSelect}>二年级</NianJiButton>
         <NianJiButton>三年级</NianJiButton>
       </Layout>
       <Layout style={styles.gradeSection}>
-        <NianJiButton>四年级</NianJiButton>
-        <NianJiButton>五年级</NianJiButton>
-        <NianJiButton>六年级</NianJiButton>
+        <NianJiButton onPress={handleGradeSelect}>四年级</NianJiButton>
+        <NianJiButton onPress={handleGradeSelect}>五年级</NianJiButton>
+        <NianJiButton onPress={handleGradeSelect}>六年级</NianJiButton>
       </Layout>
       <Layout style={styles.gradeSection}>
-        <NianJiButton>上册</NianJiButton>
-        <NianJiButton>下册</NianJiButton>
-        <NianJiButton>确认</NianJiButton>
+        <NianJiButton onPress={handleGradeSelect}>上册</NianJiButton>
+        <NianJiButton onPress={handleGradeSelect}>下册</NianJiButton>
+        <NianJiButton onPress={handlePress}>确认</NianJiButton>
       </Layout>
       </Layout>
   );

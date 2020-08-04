@@ -6,7 +6,7 @@ import Colors from "../constants/colors";
 
 export const NianJiButton = (props) => {
   return (
-    <TouchableOpacity activeOpacity={0.6} onPress={props.onPress}>
+    <TouchableOpacity activeOpacity={0.6} onPress={() => props.onPress(props.children)}>
       <View style={styles.button}>
         <TitleText>{props.children}</TitleText>
       </View>

@@ -5,7 +5,9 @@ import { Layout, Text, Button } from "@ui-kitten/components";
 
 import { generateSimpleArithmetic } from "../math-problem/SimpleArithmetic";
 
-const QuestionStart = ({ navigation }) => {
+const QuestionStart = ({ route, navigation }) => {
+  const { questionName } = route.params;
+
   const [answer, setAnswer] = useState(0);
   let generator = new generateSimpleArithmetic();
 
@@ -14,13 +16,15 @@ const QuestionStart = ({ navigation }) => {
   generator.getAnsArray();
 
   const handlePress = () => {
-    navigation.navigate("Question");
+    navigation.navigate("Question", {
+      questionName: questionName,
+    });
   };
 
   return (
     <Layout style={styles.container}>
       <Layout style={styles.headerTextContainer}>
-        <HeaderText>20以内加减法</HeaderText>
+        <HeaderText>{questionName}</HeaderText>
       </Layout>
       <Layout style={styles.questionTextContainer}>
         <Text>一共10题</Text>

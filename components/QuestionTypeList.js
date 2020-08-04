@@ -4,14 +4,16 @@ import { Divider, Text } from "@ui-kitten/components";
 
 const QuestionTypeList = (props) => {
 
-  const handlePress = () => {
-    props.navigation.navigate("QuestionStart");
+  const handlePress = (questionName) => {
+    props.navigation.navigate("QuestionStart", {
+      questionName: questionName
+    });
   }
 
   const renderSubItem = (item) => (
     <View key={item.id}>
       <Divider />
-      <TouchableOpacity style={styles.subItemContainer} onPress={handlePress}>
+      <TouchableOpacity style={styles.subItemContainer} onPress={() => handlePress(item.name)}>
         <Text style={styles.subItem}>{item.name}</Text>
       </TouchableOpacity>
     </View>

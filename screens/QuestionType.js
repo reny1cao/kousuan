@@ -9,13 +9,14 @@ import Colors from "../constants/colors";
 
 import categories from "../constants/mocks";
 
-const QuestionType = ({ navigation }) => {
+const QuestionType = ({ route, navigation }) => {
   //props should contain the info about what grade is choosed
 
+  const { gradeSelected } = route.params;
   return (
     <Layout style={styles.container}>
       <Layout style={styles.headerSection}>
-        <HeaderText>一年级下册</HeaderText>
+        <HeaderText>{gradeSelected}</HeaderText>
       </Layout>
       <SearchBar />
       <Layout style={styles.container}>
