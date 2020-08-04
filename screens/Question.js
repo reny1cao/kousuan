@@ -1,12 +1,22 @@
 import React, { useState } from "react";
-import { StyleSheet, SafeAreaView, TouchableOpacity} from "react-native";
+import { StyleSheet, SafeAreaView, TouchableOpacity } from "react-native";
 import HeaderText from "../components/HeaderText";
 import { Layout, Text } from "@ui-kitten/components";
+
+import { generateSimpleArithmetic } from "../math-problem/SimpleArithmetic";
 
 import Colors from "../constants/colors";
 
 const Question = () => {
   //props should contain the info about what grade is choosed
+  const [answer, setAnswer] = useState(0);
+  let generator = new generateSimpleArithmetic();
+
+  generator.getNums(20);
+  generator.getOperation();
+  generator.getAnsArray();
+
+  console.log(generator.answers);
 
   return (
     <Layout style={styles.container}>
@@ -14,27 +24,22 @@ const Question = () => {
         <HeaderText>20以内加减法</HeaderText>
       </Layout>
       <Layout style={styles.questionContainer}>
+        <Text style={styles.questionText}>{generator.num1}</Text>
+        <Text style={styles.questionText}>{generator.operation}</Text>
+        <Text style={styles.questionText}>{generator.num2}</Text>
+        <Text style={styles.questionText}>=</Text>
         <Layout style={styles.questionTextContainer}>
           <Text style={styles.emptyQuestionText}>?</Text>
         </Layout>
-        <Text style={styles.questionText}>+10=15</Text>
       </Layout>
       <Layout style={styles.answerContainer}>
-        <TouchableOpacity style={styles.answeTextContainer}>
-          <Text style={styles.answerText}>4</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.answeTextContainer}>
-          <Text style={styles.answerText}>5</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.answeTextContainer}>
-          <Text style={styles.answerText}>7</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.answeTextContainer}>
-          <Text style={styles.answerText}>7</Text>
-        </TouchableOpacity>
+        {generator.answers.map((ans, index) => {
+          return (
+            <TouchableOpacity style={styles.answeTextContainer} key={index}>
+              <Text style={styles.answerText}>{ans}</Text>
+            </TouchableOpacity>
+          );
+        })}
       </Layout>
     </Layout>
   );
