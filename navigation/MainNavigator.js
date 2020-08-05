@@ -10,10 +10,10 @@ const { Navigator, Screen } = createStackNavigator();
 
 const MainNavigator = () => (
   <Navigator>
-    <Screen name='Welcome' component={Welcome}/>
-    <Screen name='QuestionType' component={QuestionType}/>
-    <Screen name='QuestionStart' component={QuestionStart} />
-    <Screen name='Question' component={Question}/>
+    <Screen name='首页' component={Welcome} options={{headerShown: false}}/>
+    <Screen name='QuestionType' component={QuestionType} options={({route}) => ({title: route.params.gradeSelected})}/>
+    <Screen name='QuestionStart' component={QuestionStart} options={{headerTitle: false}}/>
+    <Screen name='Question' component={Question} options={({route}) => ({title: route.params.questionName})}/>
   </Navigator>
 );
 

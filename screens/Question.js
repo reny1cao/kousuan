@@ -1,16 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { StyleSheet, TouchableOpacity } from "react-native";
-import HeaderText from "../components/HeaderText";
+import React, { useState } from "react";
+import { StyleSheet } from "react-native";
 import { Layout, Text, Button } from "@ui-kitten/components";
 
 import { generateSimpleArithmetic } from "../math-problem/SimpleArithmetic";
 
-import Colors from "../constants/colors";
-
 const Question = ({ route }) => {
   //props should contain the info about what grade is choosed
-  const { questionName } = route.params;
-
   const [answer, setAnswer] = useState(null);
   let generator = new generateSimpleArithmetic();
 
@@ -26,9 +21,6 @@ const Question = ({ route }) => {
 
   return (
     <Layout style={styles.container}>
-      <Layout style={styles.headerSection}>
-        <HeaderText>{questionName}</HeaderText>
-      </Layout>
       <Layout style={styles.questionContainer}>
         <Text style={styles.questionText}>{generator.num1}</Text>
         <Text style={styles.questionText}>{generator.operation}</Text>
@@ -62,9 +54,6 @@ const Question = ({ route }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  headerSection: {
-    alignItems: "center",
   },
   questionContainer: {
     flexDirection: "row",

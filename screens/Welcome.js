@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Button, View } from "react-native";
+import { StyleSheet, Button, View, SafeAreaView } from "react-native";
 import { NianJiButton } from "../components/NianJiButton";
 import TitleText from "../components/TitleText";
 import { Layout } from '@ui-kitten/components';
@@ -18,7 +18,8 @@ const Welcome = ({navigation}) => {
   };
 
   return (
-      <Layout style={styles.container}>
+    <Layout style={styles.container}>
+      <SafeAreaView style={styles.container}>
       <TitleText>口算</TitleText>
       <Layout style={styles.gradeSection}>
         <NianJiButton onPress={handleGradeSelect}>一年级</NianJiButton>
@@ -35,7 +36,9 @@ const Welcome = ({navigation}) => {
         <NianJiButton onPress={handleGradeSelect}>下册</NianJiButton>
         <NianJiButton onPress={handlePress}>确认</NianJiButton>
       </Layout>
-      </Layout>
+      </SafeAreaView>
+    </Layout>
+    
   );
 };
 
