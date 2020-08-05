@@ -45,25 +45,12 @@ export function generateSimpleArithmetic() {
     }
   };
 
-  this.getAnsArray = () => {
-    this.answers = [];
-    let count = 4;
-    while (count != 0) {
-      let randInt = this.getRandomInt(-4 + this.trueAns, 4 + this.trueAns);
-      this.answers.push(randInt);
-      count--;
-    }
-    console.log(this.answers);
-    this.answers.splice(this.getRandomInt(0, 4), 1, this.trueAns);
-  };
-
   this.getQuestion = () => {
     return {
       num1: this.num1,
       num2: this.num2,
       operation: this.operation,
       trueAns: this.trueAns,
-      answers: this.answers,
     };
   };
 }

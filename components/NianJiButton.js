@@ -4,7 +4,7 @@ import TitleText from "../components/TitleText";
 
 import Colors from "../constants/colors";
 
-export const NianJiButton = (props) => {
+const NianJiButton = (props) => {
   return (
     <TouchableOpacity activeOpacity={0.6} onPress={() => props.onPress(props.children)}>
       <View style={styles.button}>

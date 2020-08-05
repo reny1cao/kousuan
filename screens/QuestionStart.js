@@ -15,7 +15,6 @@ const QuestionStart = ({ route, navigation }) => {
     while (numOfQuestions != 0) {
       generator.getNums(20);
       generator.getOperation();
-      generator.getAnsArray();
 
       setQuestions(questions.push(generator.getQuestion()));
 

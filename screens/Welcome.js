@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, Button, View, SafeAreaView } from "react-native";
-import { NianJiButton } from "../components/NianJiButton";
+import NianJiButton from "../components/NianJiButton";
 import TitleText from "../components/TitleText";
 import { Layout } from '@ui-kitten/components';
 
