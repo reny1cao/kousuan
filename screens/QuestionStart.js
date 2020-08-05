@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import HeaderText from "../components/HeaderText";
 import { Layout, Text, Button } from "@ui-kitten/components";
@@ -8,16 +8,26 @@ import { generateSimpleArithmetic } from "../math-problem/SimpleArithmetic";
 const QuestionStart = ({ route, navigation }) => {
   const { questionName } = route.params;
 
-  const [answer, setAnswer] = useState(0);
+  const [questions, setQuestions] = useState([]);
   let generator = new generateSimpleArithmetic();
 
-  generator.getNums(20);
-  generator.getOperation();
-  generator.getAnsArray();
+  const generateQuestions = (numOfQuestions) => {
+    while (numOfQuestions != 0) {
+      generator.getNums(20);
+      generator.getOperation();
+      generator.getAnsArray();
+
+      setQuestions(questions.push(generator.getQuestion()));
+
+      numOfQuestions--;
+    }
+  };
 
   const handlePress = () => {
+    generateQuestions(10);
     navigation.navigate("Question", {
       questionName: questionName,
+      questions: questions,
     });
   };
 

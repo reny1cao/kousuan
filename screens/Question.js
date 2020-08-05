@@ -1,41 +1,50 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet } from "react-native";
 import { Layout, Text, Button } from "@ui-kitten/components";
-
-import { generateSimpleArithmetic } from "../math-problem/SimpleArithmetic";
 
 const Question = ({ route }) => {
   //props should contain the info about what grade is choosed
   const [answer, setAnswer] = useState(null);
-  let generator = new generateSimpleArithmetic();
 
-  generator.getNums(20);
-  generator.getOperation();
-  generator.getAnsArray();
+  const { questions } = route.params;
+  const [questionIndex, setQuestionIndex] = useState(0);
+  const [currentQuestion, setCurrentQuestion] = useState(
+    questions[questionIndex]
+  );
 
   const handleSelectAns = (index) => {
-    if (generator.answers[index] == generator.trueAns) {
+    if (currentQuestion.answers[index] == currentQuestion.trueAns) {
       setAnswer(true);
+    } else {
+      setAnswer(false);
     }
+  };
+
+  const handleNext = () => {
+    setQuestionIndex(questionIndex + 1);
+    setCurrentQuestion(questions[questionIndex + 1]);
+    setAnswer(null);
   };
 
   return (
     <Layout style={styles.container}>
       <Layout style={styles.questionContainer}>
-        <Text style={styles.questionText}>{generator.num1}</Text>
-        <Text style={styles.questionText}>{generator.operation}</Text>
-        <Text style={styles.questionText}>{generator.num2}</Text>
+        <Text style={styles.questionText}>{currentQuestion.num1}</Text>
+        <Text style={styles.questionText}>{currentQuestion.operation}</Text>
+        <Text style={styles.questionText}>{currentQuestion.num2}</Text>
         <Text style={styles.questionText}>=</Text>
         <Layout style={styles.questionTextContainer}>
           <Text style={styles.emptyQuestionText}>?</Text>
         </Layout>
       </Layout>
       <Layout style={styles.answerContainer}>
-        {generator.answers.map((ans, index) => {
+        {currentQuestion.answers.map((ans, index) => {
           return (
             <Button
               appearance="outline"
-              status={answer && generator.trueAns == ans ? "success" : "basic"}
+              status={
+                answer && currentQuestion.trueAns == ans ? "success" : "basic"
+              }
               key={index}
               onPress={() => handleSelectAns(index)}
             >
@@ -45,7 +54,7 @@ const Question = ({ route }) => {
         })}
       </Layout>
       <Layout style={styles.nextQuestionButton}>
-        {answer ? <Button>下一题</Button> : null}
+        {answer ? <Button onPress={handleNext}>下一题</Button> : null}
       </Layout>
     </Layout>
   );
