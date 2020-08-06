@@ -18,46 +18,46 @@ const SimpleNumberPad = (props) => {
     <Layout style={styles.container}>
       <Layout style={styles.row}>
         <Layout style={styles.buttonContainer}>
-          <NumberButton onPress={props.numberOnPress}>1</NumberButton>
+          <NumberButton onPress={props.numberOnPress} disabled={props.disabled}>1</NumberButton>
         </Layout>
         <Layout style={styles.buttonContainer}>
-          <NumberButton onPress={props.numberOnPress}>2</NumberButton>
+          <NumberButton onPress={props.numberOnPress} disabled={props.disabled}>2</NumberButton>
         </Layout>
         <Layout style={styles.buttonContainer}>
-          <NumberButton onPress={props.numberOnPress}>3</NumberButton>
-        </Layout>
-      </Layout>
-      <Layout style={styles.row}>
-        <Layout style={styles.buttonContainer}>
-          <NumberButton onPress={props.numberOnPress}>4</NumberButton>
-        </Layout>
-        <Layout style={styles.buttonContainer}>
-          <NumberButton onPress={props.numberOnPress}>5</NumberButton>
-        </Layout>
-        <Layout style={styles.buttonContainer}>
-          <NumberButton onPress={props.numberOnPress}>6</NumberButton>
+          <NumberButton onPress={props.numberOnPress} disabled={props.disabled}>3</NumberButton>
         </Layout>
       </Layout>
       <Layout style={styles.row}>
         <Layout style={styles.buttonContainer}>
-          <NumberButton onPress={props.numberOnPress}>7</NumberButton>
+          <NumberButton onPress={props.numberOnPress} disabled={props.disabled}>4</NumberButton>
         </Layout>
         <Layout style={styles.buttonContainer}>
-          <NumberButton onPress={props.numberOnPress}>8</NumberButton>
+          <NumberButton onPress={props.numberOnPress} disabled={props.disabled}>5</NumberButton>
         </Layout>
         <Layout style={styles.buttonContainer}>
-          <NumberButton onPress={props.numberOnPress}>9</NumberButton>
+          <NumberButton onPress={props.numberOnPress} disabled={props.disabled}>6</NumberButton>
         </Layout>
       </Layout>
       <Layout style={styles.row}>
         <Layout style={styles.buttonContainer}>
-          <NumberButton onPress={props.numberOnPress}>.</NumberButton>
+          <NumberButton onPress={props.numberOnPress} disabled={props.disabled}>7</NumberButton>
         </Layout>
         <Layout style={styles.buttonContainer}>
-          <NumberButton onPress={props.numberOnPress}>0</NumberButton>
+          <NumberButton onPress={props.numberOnPress} disabled={props.disabled}>8</NumberButton>
         </Layout>
         <Layout style={styles.buttonContainer}>
-          <TouchableOpacity onPress={handleDelete}>
+          <NumberButton onPress={props.numberOnPress} disabled={props.disabled}>9</NumberButton>
+        </Layout>
+      </Layout>
+      <Layout style={styles.row}>
+        <Layout style={styles.buttonContainer}>
+          <NumberButton onPress={props.numberOnPress} disabled={props.disabled}>.</NumberButton>
+        </Layout>
+        <Layout style={styles.buttonContainer}>
+          <NumberButton onPress={props.numberOnPress} disabled={props.disabled}>0</NumberButton>
+        </Layout>
+        <Layout style={styles.buttonContainer}>
+          <TouchableOpacity onPress={handleDelete} disabled={props.disabled}>
             <Icon style={styles.icon} fill="#8F9BB3" name="backspace" />
           </TouchableOpacity>
         </Layout>

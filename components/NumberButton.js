@@ -13,6 +13,7 @@ const NumberButton = (props) => {
         appearance="outline"
         status="basic"
         onPress={handlePress}
+        disabled={props.disabled}
       >
         <Text style={styles.number}>{props.children}</Text>
       </Button>
