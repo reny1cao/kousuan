@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 import { Layout, Text, Button, Icon, Input } from "@ui-kitten/components";
 import SimpleNumberPad from "../components/SimpleNumberPad";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import ProgressBar from "../components/ProgressBar";
 
 const Question = ({ route }) => {
   //props should contain the info about what grade is choosed
@@ -48,39 +49,40 @@ const Question = ({ route }) => {
 
   const startTimer = () => {
     setStatus(true);
-  }
+  };
 
   const InfoBar = () => {
     return (
       <Layout style={styles.infoBar}>
-        <Layout style={styles.prograssBar}>
-          <Text>
-            //////////////////////---------------------------------------------
-          </Text>
-        </Layout>
+        <ProgressBar questions={questions} />
         <Layout style={styles.statusBar}>
-          <Text>
-            {questionIndex + 1}/{questions.length}
-          </Text>
-          {status ? (
-            <TouchableOpacity onPress={pauseTimer}>
-              <Icon
-                style={styles.icon}
-                fill="#8F9BB3"
-                name="pause-circle-outline"
-              />
-            </TouchableOpacity>
-          ) : (
-            <TouchableOpacity onPress={startTimer}>
-              <Icon
-                style={styles.icon}
-                fill="#8F9BB3"
-                name="play-circle-outline"
-              />
-            </TouchableOpacity>
-          )}
-
-          <Text>{time}秒</Text>
+          <Layout style={styles.count}>
+            <Text>
+              {questionIndex + 1}/{questions.length}
+            </Text>
+          </Layout>
+          <Layout style={styles.playStopButton}>
+            {status ? (
+              <TouchableOpacity onPress={pauseTimer}>
+                <Icon
+                  style={styles.icon}
+                  fill="#8F9BB3"
+                  name="pause-circle-outline"
+                />
+              </TouchableOpacity>
+            ) : (
+              <TouchableOpacity onPress={startTimer}>
+                <Icon
+                  style={styles.icon}
+                  fill="#8F9BB3"
+                  name="play-circle-outline"
+                />
+              </TouchableOpacity>
+            )}
+          </Layout>
+          <Layout style={styles.timer}>
+            <Text>{time}秒</Text>
+          </Layout>
         </Layout>
       </Layout>
     );
@@ -110,12 +112,16 @@ const Question = ({ route }) => {
     <Layout style={styles.container}>
       <InfoBar />
       <QuestionSection />
-      <SimpleNumberPad numberOnPress={setAnswer} disabled={!status}/>
+      <SimpleNumberPad numberOnPress={setAnswer} disabled={!status} />
       <Layout style={styles.confirmButtonContainer}>
         {correctness ? (
-          <Button onPress={handleNext} disabled={!status}>下一题</Button>
+          <Button onPress={handleNext} disabled={!status}>
+            下一题
+          </Button>
         ) : (
-          <Button onPress={checkAnswer} disabled={!status}>确定</Button>
+          <Button onPress={checkAnswer} disabled={!status}>
+            确定
+          </Button>
         )}
       </Layout>
     </Layout>
@@ -135,11 +141,21 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   statusBar: {
-    flex: 1,
+    flex: 2,
     flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
     paddingHorizontal: 20,
+  },
+  count: {
+    flex: 1
+  },
+  playStopButton: {
+    flex: 1,
+    alignItems: "center"
+  },
+  timer: {
+    flex: 1,
+    alignItems: "flex-end"
   },
   icon: {
     width: 32,
