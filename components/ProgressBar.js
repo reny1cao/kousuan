@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   failedBrick: {
     width: "10%",
     height: "100%",
-    borderColor: Colors.primary,
+    borderColor: "#ecf0f1",
     borderWidth: 0.5,
     margin: 0,
     backgroundColor: Colors.warning,
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   successBrick: {
     width: "10%",
     height: "100%",
-    borderColor: Colors.primary,
+    borderColor: "#ecf0f1",
     borderWidth: 0.5,
     margin: 0,
     backgroundColor: Colors.success,
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
   brick: {
     width: "10%",
     height: "100%",
-    borderColor: Colors.primary,
+    borderColor: "#ecf0f1",
     borderWidth: 0.5,
     margin: 0,
   },
