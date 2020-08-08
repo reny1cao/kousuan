@@ -27,8 +27,12 @@ const Question = ({ route }) => {
   const checkAnswer = () => {
     const answerToNumber = Number(answer);
     if (answerToNumber == currentQuestion.trueAns) {
+      if (currentQuestion.correctness == undefined)
+        currentQuestion.correctness = true;
       setCorrectness(true);
     } else {
+      if (currentQuestion.correctness == undefined)
+        currentQuestion.correctness = false;
       setCorrectness(false);
     }
   };
@@ -147,15 +151,15 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   count: {
-    flex: 1
+    flex: 1,
   },
   playStopButton: {
     flex: 1,
-    alignItems: "center"
+    alignItems: "center",
   },
   timer: {
     flex: 1,
-    alignItems: "flex-end"
+    alignItems: "flex-end",
   },
   icon: {
     width: 32,
