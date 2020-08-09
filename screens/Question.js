@@ -5,10 +5,11 @@ import SimpleNumberPad from "../components/SimpleNumberPad";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import ProgressBar from "../components/ProgressBar";
 
-const Question = ({ route }) => {
+const Question = ({ route, navigation }) => {
   //props should contain the info about what grade is choosed
   const [answer, setAnswer] = useState("");
   const [correctness, setCorrectness] = useState(null);
+  const [numOfCorrect, setNumOfCorrect] = useState(0);
   const [time, setTime] = useState(0);
   const [status, setStatus] = useState(true);
   const { questions } = route.params;
@@ -18,6 +19,14 @@ const Question = ({ route }) => {
   );
 
   const handleNext = () => {
+    console.log(numOfCorrect / questions.length)
+    if (questionIndex == questions.length - 1) {
+      navigation.navigate("EndOfQuiz", {
+        time: time,
+        correctRate: numOfCorrect / questions.length
+      });
+      return;
+    }
     setQuestionIndex(questionIndex + 1);
     setCurrentQuestion(questions[questionIndex + 1]);
     setCorrectness(null);
@@ -27,8 +36,11 @@ const Question = ({ route }) => {
   const checkAnswer = () => {
     const answerToNumber = Number(answer);
     if (answerToNumber == currentQuestion.trueAns) {
-      if (currentQuestion.correctness == undefined)
+      if (currentQuestion.correctness == undefined) {
         currentQuestion.correctness = true;
+          setNumOfCorrect(numOfCorrect+1);
+      }
+        
       setCorrectness(true);
     } else {
       if (currentQuestion.correctness == undefined)
