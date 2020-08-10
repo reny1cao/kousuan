@@ -20,7 +20,7 @@ export function generateSimpleArithmetic() {
 
   this.getNums = (max) => {
     this.num1 = this.getRandomInt(0, max);
-    this.num2 = this.getRandomInt(0, max);
+    this.num2 = this.getRandomInt(1, this.num1);
   };
 
   this.getOperation = () => {

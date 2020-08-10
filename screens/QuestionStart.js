@@ -11,6 +11,10 @@ const QuestionStart = ({ route, navigation }) => {
   const [questions, setQuestions] = useState([]);
   let generator = new generateSimpleArithmetic();
 
+  useEffect(() => {
+    setQuestions([]);
+  }, []);
+
   const generateQuestions = (numOfQuestions) => {
     while (numOfQuestions != 0) {
       generator.getNums(20);
