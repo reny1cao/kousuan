@@ -24,19 +24,23 @@ const questionTypes = [
                 subCategories: [
                     {
                         id: 2.1,
-                        name: "五以内加减"
+                        name: "五以内加减",
+                        examples: ["2+1, 3+2"]
                     },
                     {
                         id: 2.2,
-                        name: "五以内加减填空"
+                        name: "五以内加减填空",
+                        examples: ["2+1, 3+2"]
                     },
                     {
                         id: 2.3,
-                        name: "五以内加减两步计算无括号"
+                        name: "五以内加减两步计算无括号",
+                        examples: ["2+1, 3+2"]
                     },
                     {
                         id: 2.4,
-                        name: "五以内加减两步计算五括号填空"
+                        name: "五以内加减两步计算五括号填空",
+                        examples: ["2+1, 3+2"]
                     },
                 ]
             },
@@ -46,19 +50,23 @@ const questionTypes = [
                 subCategories: [
                     {
                         id: 3.1,
-                        name: "20以内的数比大小"
+                        name: "20以内的数比大小",
+                        examples: ["2+1, 3+2"]
                     },
                     {
                         id: 3.2,
-                        name: "五以内加减填空"
+                        name: "五以内加减填空",
+                        examples: ["2+1, 3+2"]
                     },
                     {
                         id: 3.3,
-                        name: "五以内加减两步计算无括号"
+                        name: "五以内加减两步计算无括号",
+                        examples: ["2+1, 3+2"]
                     },
                     {
                         id: 3.4,
-                        name: "五以内加减两步计算五括号填空"
+                        name: "五以内加减两步计算五括号填空",
+                        examples: ["2+1, 3+2"]
                     },
                 ]
             },
@@ -68,19 +76,23 @@ const questionTypes = [
                 subCategories: [
                     {
                         id: 4.1,
-                        name: "五以内加减"
+                        name: "五以内加减",
+                        examples: ["2+1, 3+2"]
                     },
                     {
                         id: 4.2,
-                        name: "五以内加减填空"
+                        name: "五以内加减填空",
+                        examples: ["2+1, 3+2"]
                     },
                     {
                         id: 4.3,
-                        name: "五以内加减两步计算无括号"
+                        name: "五以内加减两步计算无括号",
+                        examples: ["2+1, 3+2"]
                     },
                     {
                         id: 4.4,
-                        name: "五以内加减两步计算五括号填空"
+                        name: "五以内加减两步计算五括号填空",
+                        examples: ["2+1, 3+2"]
                     },
                 ]
             },
@@ -111,19 +123,25 @@ const questionTypes = [
                 subCategories: [
                     {
                         id: 2.1,
-                        name: "五以内加减"
+                        name: "五以内加减",
+                        examples: ["2+1, 3+2"],
                     },
                     {
                         id: 2.2,
-                        name: "五以内加减填空"
+                        name: "五以内加减填空",
+                        examples: ["2+1, 3+2"],
                     },
                     {
                         id: 2.3,
-                        name: "五以内加减两步计算无括号"
+                        name: "五以内加减两步计算无括号",
+                        examples: ["2+1, 3+2"],
+
                     },
                     {
                         id: 2.4,
-                        name: "五以内加减两步计算五括号填空"
+                        name: "五以内加减两步计算五括号填空",
+                        examples: ["2+1, 3+2"],
+
                     },
                 ]
             },
@@ -133,19 +151,27 @@ const questionTypes = [
                 subCategories: [
                     {
                         id: 3.1,
-                        name: "20以内的数比大小"
+                        name: "20以内的数比大小",
+                        examples: ["2+1, 3+2"],
+
                     },
                     {
                         id: 3.2,
-                        name: "五以内加减填空"
+                        name: "五以内加减填空",
+                        examples: ["2+1, 3+2"],
+
                     },
                     {
                         id: 3.3,
-                        name: "五以内加减两步计算无括号"
+                        name: "五以内加减两步计算无括号",
+                        examples: ["2+1, 3+2"],
+
                     },
                     {
                         id: 3.4,
-                        name: "五以内加减两步计算五括号填空"
+                        name: "五以内加减两步计算五括号填空",
+                        examples: ["2+1, 3+2"],
+
                     },
                 ]
             },
@@ -155,19 +181,27 @@ const questionTypes = [
                 subCategories: [
                     {
                         id: 4.1,
-                        name: "五以内加减"
+                        name: "五以内加减",
+                        examples: ["2+1, 3+2"],
+
                     },
                     {
                         id: 4.2,
-                        name: "五以内加减填空"
+                        name: "五以内加减填空",
+                        examples: ["2+1, 3+2"],
+
                     },
                     {
                         id: 4.3,
-                        name: "五以内加减两步计算无括号"
+                        name: "五以内加减两步计算无括号",
+                        examples: ["2+1, 3+2"],
+
                     },
                     {
                         id: 4.4,
-                        name: "五以内加减两步计算五括号填空"
+                        name: "五以内加减两步计算五括号填空",
+                        examples: ["2+1, 3+2"],
+
                     },
                 ]
             },
@@ -198,19 +232,27 @@ const questionTypes = [
                 subCategories: [
                     {
                         id: 2.1,
-                        name: "五以内加减"
+                        name: "五以内加减",
+                        examples: ["2+1, 3+2"],
+
                     },
                     {
                         id: 2.2,
-                        name: "五以内加减填空"
+                        name: "五以内加减填空",
+                        examples: ["2+1, 3+2"],
+
                     },
                     {
                         id: 2.3,
-                        name: "五以内加减两步计算无括号"
+                        name: "五以内加减两步计算无括号",
+                        examples: ["2+1, 3+2"],
+
                     },
                     {
                         id: 2.4,
-                        name: "五以内加减两步计算五括号填空"
+                        name: "五以内加减两步计算五括号填空",
+                        examples: ["2+1, 3+2"],
+
                     },
                 ]
             },
@@ -220,19 +262,27 @@ const questionTypes = [
                 subCategories: [
                     {
                         id: 3.1,
-                        name: "20以内的数比大小"
+                        name: "20以内的数比大小",
+                        examples: ["2+1, 3+2"],
+
                     },
                     {
                         id: 3.2,
-                        name: "五以内加减填空"
+                        name: "五以内加减填空",
+                        examples: ["2+1, 3+2"],
+
                     },
                     {
                         id: 3.3,
-                        name: "五以内加减两步计算无括号"
+                        name: "五以内加减两步计算无括号",
+                        examples: ["2+1, 3+2"],
+
                     },
                     {
                         id: 3.4,
-                        name: "五以内加减两步计算五括号填空"
+                        name: "五以内加减两步计算五括号填空",
+                        examples: ["2+1, 3+2"],
+
                     },
                 ]
             },
@@ -242,19 +292,23 @@ const questionTypes = [
                 subCategories: [
                     {
                         id: 4.1,
-                        name: "五以内加减"
+                        name: "五以内加减",
+                        examples: ["2+1, 3+2"]
                     },
                     {
                         id: 4.2,
-                        name: "五以内加减填空"
+                        name: "五以内加减填空",
+                        examples: ["2+1, 3+2"]
                     },
                     {
                         id: 4.3,
-                        name: "五以内加减两步计算无括号"
+                        name: "五以内加减两步计算无括号",
+                        examples: ["2+1, 3+2"]
                     },
                     {
                         id: 4.4,
-                        name: "五以内加减两步计算五括号填空"
+                        name: "五以内加减两步计算五括号填空",
+                        examples: ["2+1, 3+2"]
                     },
                 ]
             },

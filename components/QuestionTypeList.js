@@ -15,6 +15,7 @@ const QuestionTypeList = (props) => {
       <Divider />
       <TouchableOpacity style={styles.subItemContainer} onPress={() => handlePress(item.name)}>
         <Text style={styles.subItem}>{item.name}</Text>
+        <Text style={styles.hint} appearance='hint'>{item.examples}</Text>
       </TouchableOpacity>
     </View>
   );
@@ -39,7 +40,8 @@ const QuestionTypeList = (props) => {
 
 const styles = StyleSheet.create({
   categoryTextContainer: {
-    backgroundColor: 'rgb(238, 241, 246)'
+    backgroundColor: 'rgb(238, 241, 246)',
+    paddingHorizontal: 2
   },
   categoryText: {
     paddingVertical: 3
@@ -49,7 +51,10 @@ const styles = StyleSheet.create({
   },
   subItem: {
     padding: 5,
-    fontSize: 18
+    fontSize: 16
+  },
+  hint: {
+    paddingHorizontal: 5
   }
 });
 
