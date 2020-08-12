@@ -11,7 +11,7 @@ const QuestionType = ({ route, navigation }) => {
   const { categories } = route.params;
   return (
     <Layout style={styles.container}>
-      <SearchBar />
+      {/* <SearchBar /> */}
       <Layout style={styles.container}>
         <QuestionTypeList data={categories} navigation={navigation} />
       </Layout>

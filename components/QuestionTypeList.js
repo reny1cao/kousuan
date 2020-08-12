@@ -41,7 +41,7 @@ const QuestionTypeList = (props) => {
 const styles = StyleSheet.create({
   categoryTextContainer: {
     backgroundColor: 'rgb(238, 241, 246)',
-    paddingHorizontal: 2
+    paddingHorizontal: 7
   },
   categoryText: {
     paddingVertical: 3
@@ -50,11 +50,11 @@ const styles = StyleSheet.create({
     marginVertical: 10
   },
   subItem: {
-    padding: 5,
+    paddingHorizontal: 7,
     fontSize: 16
   },
   hint: {
-    paddingHorizontal: 5
+    paddingHorizontal: 7
   }
 });
 
