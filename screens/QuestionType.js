@@ -4,10 +4,11 @@ import SearchBar from "../components/SearchBar";
 import QuestionTypeList from "../components/QuestionTypeList";
 import { Layout } from "@ui-kitten/components";
 
-import categories from "../constants/mocks";
+// import categories from "../constants/mocks";
 
 const QuestionType = ({ route, navigation }) => {
   //props should contain the info about what grade is choosed
+  const { categories } = route.params;
   return (
     <Layout style={styles.container}>
       <SearchBar />

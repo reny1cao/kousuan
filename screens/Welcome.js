@@ -4,11 +4,16 @@ import NianJiButton from "../components/NianJiButton";
 import TitleText from "../components/TitleText";
 import { Layout } from '@ui-kitten/components';
 
+import questionTypes from '../constants/question-types';
+
 const Welcome = ({navigation}) => {
   const [grade, setGrade] = useState('');
 
   const handlePress = () => {
-    navigation.navigate('QuestionType', {gradeSelected: grade});
+    let categories = questionTypes.filter(questionType => questionType.grade == grade)[0].categories;
+    let selected = JSON.parse(JSON.stringify(grade));
+    setGrade("");
+    navigation.navigate('QuestionType', {gradeSelected: selected, categories: categories});
   }
 
   const handleGradeSelect = (selected) => {
