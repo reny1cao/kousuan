@@ -3,15 +3,8 @@ import { Text, View, StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Icon } from "@ui-kitten/components";
 import Welcome from "../screens/Welcome.js";
+import Profile from "../screens/Profile";
 import Colors from "../constants/colors";
-
-const UserProfileScreen = () => {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Profile!</Text>
-    </View>
-  );
-};
 
 const Tab = createBottomTabNavigator();
 
@@ -22,9 +15,9 @@ export const TabNavigator = () => {
         tabBarIcon: ({ focused, color }) => {
           let iconName;
 
-          if (route.name === "Home") {
+          if (route.name === "首页") {
             iconName = focused ? "book-open" : "book-open-outline";
-          } else if (route.name === "Profile") {
+          } else if (route.name === "用户") {
             iconName = focused ? "person" : "person-outline";
           }
 
@@ -36,8 +29,8 @@ export const TabNavigator = () => {
         inactiveTintColor: Colors.primary,
       }}
     >
-      <Tab.Screen name="Home" component={Welcome} />
-      <Tab.Screen name="Profile" component={UserProfileScreen} />
+      <Tab.Screen name="首页" component={Welcome} />
+      <Tab.Screen name="用户" component={Profile} />
     </Tab.Navigator>
   );
 };
