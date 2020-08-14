@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Text, View } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Icon } from "@ui-kitten/components";
 import Welcome from "../screens/Welcome.js";
@@ -19,7 +19,7 @@ export const TabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
+        tabBarIcon: ({ focused, color }) => {
           let iconName;
 
           if (route.name === "Home") {
@@ -28,7 +28,7 @@ export const TabNavigator = () => {
             iconName = focused ? "person" : "person-outline";
           }
 
-          return <Icon name={iconName} size={size} fill={color} />;
+          return <Icon name={iconName} style={styles.icon} fill={color} />;
         },
       })}
       tabBarOptions={{
@@ -41,3 +41,11 @@ export const TabNavigator = () => {
     </Tab.Navigator>
   );
 };
+
+
+const styles = StyleSheet.create({
+  icon: {
+    height: 30,
+    width: 30
+  }
+});
