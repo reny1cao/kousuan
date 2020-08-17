@@ -5,13 +5,18 @@ import QuestionType from "../screens/QuestionType.js";
 import QuestionStart from "../screens/QuestionStart.js";
 import Question from "../screens/Question.js";
 import EndOfQuiz from "../screens/EndOfQuiz.js";
-
+import Auth from "../screens/Auth.js";
 import { TabNavigator } from "./TabNavigator";
 
 const { Navigator, Screen } = createStackNavigator();
 
 export const MainNavigator = () => (
   <Navigator>
+     <Screen
+      name="登陆"
+      component={Auth}
+      options={{ headerShown: false }}
+    />
     <Screen
       name="首页"
       component={TabNavigator}
