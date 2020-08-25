@@ -18,7 +18,7 @@ export const MainNavigator = () => (
       options={{ headerShown: false }}
     />
     <Screen
-      name="首页"
+      name="Welcome"
       component={TabNavigator}
       options={{ headerShown: false }}
     />
